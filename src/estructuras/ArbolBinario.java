@@ -112,4 +112,13 @@ public class ArbolBinario<T extends Comparable<T>> {
         }
         return nodo;
     }
+    public int calcularFE(NodoArbol<T> nodo) {
+        if (nodo == null) {
+            return 0;
+        }
+        int alturaIzquierda = obtenerAltura(nodo.getIzquierdo());
+        int alturaDerecha = obtenerAltura(nodo.getDerecho());
+        
+        return alturaDerecha - alturaIzquierda;
+    }
 }
